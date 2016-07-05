@@ -24,7 +24,7 @@
               "parameters": {
                   "StorageName":{
                         "value": "[parameters('StorageName')]"
-                    }
+                  }
               }
           }
       }
