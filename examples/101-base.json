@@ -1,0 +1,49 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+      "StorageName":
+      {
+          "type": "string",
+          "metadata": {
+            "description": "The name of the storage"   
+          }
+      },
+      "StorageType": {
+
+          "type": "string",
+          "defaultValue": "Standers_LRS",
+          "metadata": {
+              "description": "You can put information about your parmeters here"
+          }
+      }
+
+  },
+  "variables": {
+      "storage-name":"[uniqueString(parameters('StorageName'),resourceGroup().name)]"
+  },
+  "resources": [
+      {
+          "type": "Microsoft.Storage/storageAccounts",
+          "apiVersion": "2016-01-01",
+          "kind": "Storage",
+          "name": "[variables('storage-name')]",
+          "sku": {
+          "name": "[parameters('storageType')]"
+          },
+          "location": "[resourceGroup().location]",
+          "tags": {
+              "description": " This is the basic template creating just a simple storage account"
+          },
+          "properties": {
+          }
+      }
+  ],
+  "outputs": {
+      "my-thing":
+      {
+          "type": "string",
+          "value": "hello-world!"
+      }   
+  }
+}
