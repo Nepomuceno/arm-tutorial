@@ -42,3 +42,19 @@ On the parameters there is just the basic usage of a parameter file.
 This template is is showing how to have restrictions on parameters and to make it more sensible to you use case.
 
 the parameter file have invalid values on purpose to show how to invalidate the parameters of a template.
+
+##103-invoking-other-templates.json
+
+On this I will show how to use nested templates and how can you deploy using them. 
+
+##201-using-object-parameters.json
+
+This will show the basic usage of an object parameter and how can you customize it to fit you needs and do not require multiple parameters to be passed.
+
+
+
+## Next steps
+
+- To learn about creating Resource Manager templates, see [Authoring templates](https://azure.microsoft.com/en-us/documentation/articles/resource-group-authoring-templates/)
+- To understand the functions you can use in an Resource Manager template, see [Template functions](https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-functions/)
+- For guidance on designing your templates, see [Best practices for designing Azure Resource Manager templates](https://azure.microsoft.com/en-us/documentation/articles/best-practices-resource-manager-design-templates/)
