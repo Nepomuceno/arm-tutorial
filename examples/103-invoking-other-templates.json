@@ -1,6 +1,32 @@
 {
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": []
+  "parameters": {
+      "StorageName":{
+          "type": "string",
+          "value": "sample-template"
+      }
+  },
+  "variables": {
+      "other-template": "101-base.json"
+  },
+  "resources": [
+      {
+          "apiVersion": "2015-01-01",
+          "type": "Microsoft.Resources/deployments",
+          "name": "OtherTemplate",
+          "properties": {
+              "mode": "Incremental",
+              "templateLink": {
+                  "uri": "[uri(deployment().properties.templateLink.uri, variables('other-template'))]",
+                  "contentVersion": "1.0.0.0"
+              },
+              "parameters": {
+                  "StorageName":{
+                        "value": "[parameters('StorageName')]"
+                    }
+              }
+          }
+      }
+  ]
 }

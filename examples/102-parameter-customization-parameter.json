@@ -2,5 +2,23 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+      "PublicIPName":{
+      "value": "hi",
+      "metadata": {
+        "restrictions" : "to short fot the lenght required"
+      }
+    },
+    "AllocationMethod" :{
+      "value": "InvalidAllocation",
+      "metadata": {
+        "restrictions": "value not on the accepted"
+      }
+    },
+    "IPcount":{
+      "value": 20,
+      "metadata": {
+        "restrictions" : "Number greater than the maximum allowed"
+      }
+    }
   }
 }

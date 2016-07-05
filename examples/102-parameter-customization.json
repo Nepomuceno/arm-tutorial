@@ -1,6 +1,50 @@
 {
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": []
+  "parameters": {
+    "PublicIPName":{
+      "type": "string",
+      "maxLength": 20,
+      "minLength": 5,
+      "metadata": {
+        "restrictions" : "You can add restrictions based on the string lengh"
+      }
+    },
+    "AllocationMethod" :{
+      "type": "string",
+      "allowedValues": [
+        "Dynamic",
+        "Static"
+      ],
+      "metadata": {
+        "restrictions": "You can add restrictions based on a specific number of values"
+      }
+    },
+    "IPcount":{
+      "type": "int",
+      "minValue": 1,
+      "maxValue": 5,
+      "metadata": {
+        "restrictions" : "You also can limit based on the maximum amount of resources that can be created"
+      }
+    }
+  },
+  "variables": {
+    "publicIPAddressName": "[uniqueString(parameters('PublicIPName'),subscription().subscriptionId)]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2016-03-30",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('publicIPAddressName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "publicIPAllocationMethod": "[parameters('AllocationMethod')]"
+      },
+      "copy": {
+        "count": "[parameters('IPcount')]",
+        "name": "copyIPs"
+      }
+    }
+  ]
 }
