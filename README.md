@@ -62,6 +62,7 @@ Using the TShirt approach you basically bucket what kind of sizes people can use
 
 ## Next steps
 
+- The best source for examples for templates [Quick start templates](https://github.com/Azure/azure-quickstart-templates)
 - To learn about creating Resource Manager templates, see [Authoring templates](https://azure.microsoft.com/en-us/documentation/articles/resource-group-authoring-templates/)
 - To understand the functions you can use in an Resource Manager template, see [Template functions](https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-functions/)
 - For guidance on designing your templates, see [Best practices for designing Azure Resource Manager templates](https://azure.microsoft.com/en-us/documentation/articles/best-practices-resource-manager-design-templates/)
