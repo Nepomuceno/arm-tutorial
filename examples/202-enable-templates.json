@@ -1,6 +1,52 @@
 {
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": []
+  "parameters": {
+    "redisName": {
+      "type": "string"
+    },
+    "redisConfig": {
+      "type": "object",
+      "defaultValue": {
+        "capacity": 0,
+        "family": "C",
+        "sku": "Basic",
+        "EnableNonSsl": true
+      }
+    },
+    "Enabled":{
+        "type": "string",
+        "allowedValues": [
+          "True",
+          "False"
+        ]
+    }
+  },
+  "variables": {
+    "redisFalse":"202-enable-template-empty-template.json",
+    "redisTrue":"201-using-object-parameter.json",
+    "deployment-template": "[variables(concat('redis',parameters('Enabled')))]"
+  },
+  "resources": [
+    {
+      "apiVersion": "2015-01-01",
+      "type": "Microsoft.Resources/deployments",
+      "name": "OtherTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('deployment-template')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "redisName": {
+            "value": "[parameters('redisName')]"
+          },
+          "redisConfig":{
+            "value": "[parameters('redisConfig')]"
+          }
+        }
+      }
+    }
+  ]
 }

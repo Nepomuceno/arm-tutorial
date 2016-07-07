@@ -1,0 +1,19 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "redisName": {
+            "type": "string"
+        },
+        "redisConfig": {
+            "type": "object",
+            "defaultValue": {
+                "capacity": 0,
+                "family": "C",
+                "sku": "Basic",
+                "EnableNonSsl": true
+            }
+        }
+    },
+    "resources": []
+}
