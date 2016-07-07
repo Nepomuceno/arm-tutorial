@@ -2,7 +2,7 @@
 Tutorial on how to build advanced templates with Azure resource manager.
 
 #Pre-Requisites
-You will need to have the Azure Command Line Tools instaled on you PC you can use Powershell *or* the Azure CLI
+You will need to have the Azure Command Line Tools instaled on you PC. To do this, you can use Powershell *or* the Azure CLI
 
 To install Azure CLI, run the following;
 
@@ -31,7 +31,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName <resource-group-name> -Tem
 ```
 
 #Content
-You can find the following templates in the examples folder of this repo.
+You can find the following templates in the _examples_ folder of this repo.
 
 ##101-base.json
 This basic template is simply the basic areas of each one of the resources, and how to utilize the basic functionality.
@@ -40,17 +40,17 @@ On the parameters there is just the basic usage of a parameter file.
 
 ##102-parameter-customization.json
 
-This template is is showing how to have restrictions on parameters and to make it more sensible to you use case.
+This template shows how to have restrictions on parameters and to make it more sensible to you use case.
 
-the parameter file have invalid values on purpose to show how to invalidate the parameters of a template.
+The parameter file has invalid values on purpose to show how to validate the parameters of a template.
 
 ##103-invoking-other-templates.json
 
-On this I will show how to use nested templates and how can you deploy using them. 
+On this I show how to use nested templates and how can you deploy using them. 
 
 ##201-using-object-parameters.json
 
-This will show the basic usage of an object parameter and how can you customize it to fit you needs and do not require multiple parameters to be passed.
+This shows the basic usage of an object parameter, and how you can customize it to fit your needs and do not require multiple parameters to be passed.
 
 ##202-enable-templates.json
 
@@ -58,7 +58,7 @@ This template shows how to combine using different templates to being able to en
 
 ##301-TShirt-size-template.json
 
-Using the TShirt approach you basically bucket what kind of sizes people can used for you template puffing values like `small` `medium` `large` enabling others to use or template easily.
+Using the TShirt approach, you basically bucket what kind of sizes people can use for your template puffing values, like `small` `medium` `large` enabling others to use your template easily.
 
 ## Next steps
 
