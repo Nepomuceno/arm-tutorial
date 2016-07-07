@@ -3,16 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "redisName": {
-      "type": "string"
+      "value": "Hello"
     },
-    "redisConfig": {
-      "type": "object",
-      "defaultValue": {
-        "capacity": 0,
-        "family": "C",
-        "sku": "Basic",
-        "EnableNonSsl": true
-      }
+    "redisSize": {
+      "value": "Small"
+    },
+    "Enabled": {
+      "value": "True"
     }
   }
 }

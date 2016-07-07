@@ -52,7 +52,13 @@ On this I will show how to use nested templates and how can you deploy using the
 
 This will show the basic usage of an object parameter and how can you customize it to fit you needs and do not require multiple parameters to be passed.
 
+##202-enable-templates.json
 
+This template shows how to combine using different templates to being able to enable parts of your template only, on this example with the parameter `Enable` you can create or not the redis template.
+
+##301-TShirt-size-template.json
+
+Using the TShirt approach you basically bucket what kind of sizes people can used for you template puffing values like `small` `medium` `large` enabling others to use or template easily.
 
 ## Next steps
 
